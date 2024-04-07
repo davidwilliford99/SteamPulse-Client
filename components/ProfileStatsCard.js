@@ -9,15 +9,41 @@ import './../app/globals.css';
 
 
 const ProfileStatsCard = ({ userData }) => {
+
+    // Dealing with Date
+    const timeCreated = userData.timecreated;
+    let dateCreated = new Date(timeCreated * 1000);
+    var year = dateCreated.getFullYear();
+    var month = dateCreated.getMonth() + 1; 
+    var day = dateCreated.getDate();
+
+    // Concatenate to get a YYYY-MM-DD format
+    var formattedDate = month + '/' + day + '/' + year;
      
+
     return (
         <div className="bg-neutral-800 p-5 rounded-md">
-            <div className="title-section flex">
-                <div className="flex items-center">
-                    <img src={userData.avatarmedium} className="mr-3"/>
-                    <h1 className="text-3xl">{userData.personaname}</h1>
-                </div>
+
+            {/* Top row */}
+            <div className="title-section flex gap-3">
+                <div className="w-full flex items-center justify-between gap-3">
+                    <div className="flex items-center">
+                        <img src={userData.avatarmedium} className="h-12 mr-3"/>
+                        <h1 className="text-2xl">{userData.personaname}</h1>
+                    </div>
+                    <p className="text-neutral-500 text-sm">Account Created: {formattedDate}</p>
+                    <a href={userData.profileurl} className="text-sm text-purple-500">Steam Profile</a>
+                </div>  
             </div>
+
+            {/* Second row */}
+            <div className="title-section flex gap-3">
+                <div className="w-full flex items-center justify-between gap-3">
+
+                </div>  
+            </div>
+
+
         </div>
     )
 }

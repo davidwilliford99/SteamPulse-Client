@@ -3,7 +3,10 @@ import './../app/globals.css';
 
 const RecommendedDropdown = () => {
     return (
-        <div>Hello</div>
+        <div className="w-full flex flex-col bg-neutral-800">
+            <div>Recommended Games Dropdown</div>
+        </div>
+
     )
 }
 
