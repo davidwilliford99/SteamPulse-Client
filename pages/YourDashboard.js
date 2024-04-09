@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
 import './../app/globals.css';
 import ProfileStatsCard from "@/components/ProfileStatsCard";
-import RecommendedDropdown from "@/components/RecommendedDropdown";
+import MostPlayedDropdown from "@/components/MostPlayedDropdown";
 import Layout from '@/components/Layout';
 import axios from "axios";
 import FriendsListDropdown from "@/components/FriendsListDropdown";
@@ -44,7 +44,7 @@ const YourDashboard = () => {
                 <ProfileStatsCard userData={userData}/>
             </div>
             <div className="flex gap-5 justify-center">
-                <RecommendedDropdown/>
+                <MostPlayedDropdown/>
                 <FriendsListDropdown/>
             </div>
 
