@@ -40,7 +40,7 @@ const FriendsListDropdown = () => {
 
 
     return (
-        <div className="w-full h-full bg-neutral-800 rounded-sm">
+        <div className="w-full h-full bg-neutral-800 rounded-md">
             <h1 className="text-center py-5 text-2xl">Your Friends</h1>
             <hr className="border-t border-purple-700"/>
 
