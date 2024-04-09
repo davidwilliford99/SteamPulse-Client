@@ -12,33 +12,19 @@ const YourDashboard = () => {
 
     const [userData, setUserData] = useState(null);
     const [friendsList, setFriendsList] = useState(null);
+    const [steamId, setSteamId] = useState(null);
 
     // get info on user account 
     useEffect(() => {
         if (typeof window !== "undefined") {
             const steamId = localStorage.getItem("steamId");
+            setSteamId(steamId)
             axios.get(`http://localhost:5000/steam/api/user?steamid=${steamId}`)
                 .then(response => {
                     setUserData(response.data.response.players[0]);
             })
                 .catch(error => {
                     console.error('Error fetching Steam user data:', error);
-            });
-        }
-    }, []);
-
-
-    // get friends list
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            const steamId = localStorage.getItem("steamId");
-            axios.get(`http://localhost:5000/steam/api/friends?steamid=${steamId}`)
-                .then(response => {
-                    console.log(response.data);
-                    setFriendsList(response.data);
-            })
-                .catch(error => {
-                    console.error('Error fetching Steam friends list:', error);
             });
         }
     }, []);
