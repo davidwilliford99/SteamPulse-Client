@@ -4,22 +4,25 @@ import './../app/globals.css';
 
 const SideNav = () => {
     return (
-        <div className="min-h-screen w-64 bg-neutral-800 text-white flex flex-col">
+        <div className="min-h-screen w-52 bg-purple-800 text-white flex flex-col">
             <div className="py-5 px-2 text-xl font-semibold border-b border-gray-600">SteamPulse</div>
             <ul className="flex flex-col py-5">
-                <li className="mb-2">
-                    <Link legacyBehavior href="/">
-                        <a className="block p-2 hover:bg-neutral-700 rounded">Global Dashboard</a>
+            <li className="mb-2 pl-3 flex items-center hover:bg-neutral-700 rounded-sm">
+                    <img src='/global.svg' className="h-6"/>
+                    <Link legacyBehavior href="/GlobalDashboard">
+                        <a className="block p-2 text-neutral-200 font-semibold">Global Dashboard</a>
                     </Link>
                 </li>
-                <li className="mb-2">
-                    <Link legacyBehavior href="/your-dashboard">
-                        <a className="block p-2 hover:bg-neutral-700 rounded">Your Dashboard</a>
+                <li className="mb-2 pl-3 flex items-center hover:bg-neutral-700 rounded-sm">
+                    <img src='/profile.svg' className="h-6"/>
+                    <Link legacyBehavior href="/YourDashboard">
+                        <a className="block p-2 text-neutral-200 font-semibold">Your Dashboard</a>
                     </Link>
                 </li>
-                <li className="mb-2">
-                    <Link legacyBehavior href="/about-us">
-                        <a className="block p-2 hover:bg-neutral-700 rounded">About Us</a>
+                <li className="mb-2 pl-3 flex items-center hover:bg-neutral-700 rounded-sm">
+                    <img src='/chart.svg' className="h-6"/>
+                    <Link legacyBehavior href="/AboutUs">
+                        <a className="block p-2 text-neutral-200 font-semibold">About Us</a>
                     </Link>
                 </li>
             </ul>

@@ -40,7 +40,7 @@ const YourDashboard = () => {
         <Layout>
 
             <div className="mb-5">
-                <h1 className="mb-5">Welcome, {userData.personaname}!</h1>
+                <h1 className="mb-5 text-neutral-300">Welcome, {userData.personaname}!</h1>
                 <ProfileStatsCard userData={userData}/>
             </div>
             <div className="flex gap-5 justify-center">

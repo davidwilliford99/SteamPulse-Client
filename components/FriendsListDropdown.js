@@ -39,17 +39,16 @@ const FriendsListDropdown = () => {
 
 
     return (
-        <div className="w-full h-full bg-neutral-800 rounded-md">
+        <div className="w-full h-full bg-purple-800 rounded-md">
             <h1 className="text-center py-5 text-2xl">Your Friends</h1>
-            <hr className="border-1 border-neutral-300"/>
 
             {/* Returning list of friends */}
-            <div className="h-96 overflow-y-scroll no-scrollbar">
+            <div className="h-96 overflow-y-scroll no-scrollbar bg-neutral-800">
                 {
                     friendsList.map((friend) => {
                         return (
                             <div key={friend.steamid}>
-                                <div className="flex justify-between">
+                                <div className="flex justify-between px-3">
                                     <div className="flex items-center p-2 my-2 gap-5">
                                         <img src={friend.avatarmedium} className="h-8"/>
                                         <h1 className="text-xl">{friend.personaname}</h1>
@@ -57,7 +56,7 @@ const FriendsListDropdown = () => {
                                     <p className="text-sm text-neutral-500 pr-3">{friend.realname}</p>
                                 </div>
 
-                                <hr className="border-t border-neutral-700"/>
+                                {/* <hr className="border-t border-neutral-500"/> */}
                             </div>
                         )
                     })

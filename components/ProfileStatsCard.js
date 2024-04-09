@@ -22,10 +22,10 @@ const ProfileStatsCard = ({ userData }) => {
      
 
     return (
-        <div className="bg-neutral-800 p-5 rounded-md">
+        <div className="bg-neutral-800 rounded-md">
 
             {/* Top row */}
-            <div className="title-section flex gap-3">
+            <div className="p-5 title-section flex gap-3 bg-purple-800">
                 <div className="w-full flex items-center justify-between gap-3">
                     <div className="flex items-center">
                         <img src={userData.avatarmedium} className="h-12 mr-3"/>
