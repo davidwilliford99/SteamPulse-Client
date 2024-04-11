@@ -33,7 +33,7 @@ const MostPlayedDropdown = () => {
 
     return (
         <div className="w-full h-full bg-neutral-800 rounded-md">
-            <h1 className="text-center py-5 text-2xl">Most Played</h1>
+            <h1 className="text-center py-5 text-2xl">Your Most Played Games</h1>
 
             {/* Returning list of most played games */}
             <div className="h-96 overflow-y-scroll no-scrollbar bg-neutral-900">
