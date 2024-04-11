@@ -35,7 +35,7 @@ const ProfileStatsCard = ({ userData }) => {
                         <h1 className="text-2xl">{userData.personaname}</h1>
                     </div>
 
-                    <p className="text-neutral-300 text-sm font-semibold">Member Since: {formattedDate}</p>
+                    <p className="text-neutral-300 text-lg font-semibold">Member Since: {formattedDate}</p>
                     <a href={userData.profileurl} className=" flex gap-2 items-center bg-purple-700 p-2 rounded-xl text-sm text-neutral-300">
                         <img src="/steam-logo.png" className="h-5"/>
                         <p>Profile</p>

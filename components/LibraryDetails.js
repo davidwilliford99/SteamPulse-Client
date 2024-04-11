@@ -52,15 +52,15 @@ const LibraryDetails = () => {
         {
             contentLoaded &&
             <div className='flex flex-col justify-center gap-3'>
-                <div className='bg-black p-3 flex items-end gap-3 border border-neutral-400 rounded-xl'>
+                <div className='bg-black p-3 flex items-end justify-between gap-3 border border-neutral-400 rounded-xl'>
                     <p>Total Hours Played: </p>
                     <p className='text-3xl'>{totalHours}</p>
                 </div>
-                <div className='bg-black p-3 flex items-end gap-3 border border-neutral-400 rounded-xl'>
+                <div className='bg-black p-3 flex items-end justify-between gap-3 border border-neutral-400 rounded-xl'>
                     <p>Total Library Value: </p>
                     <p className='text-3xl'>${totalCost}</p>
                 </div>
-                <div className='bg-black p-3 flex items-end gap-3 border border-neutral-400 rounded-xl'>
+                <div className='bg-black p-3 flex items-end justify-between gap-3 border border-neutral-400 rounded-xl'>
                     <p>Avg Hours/Week: </p>
                     {hoursPerWeek &&
                         <p className='text-3xl'>{hoursPerWeek.toFixed(2)}</p>

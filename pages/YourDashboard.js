@@ -37,18 +37,21 @@ const YourDashboard = () => {
 
 
     return (
-        <Layout>
+        <div className="font-source">
+            <Layout>
+                <div className="mb-5">
+                    <h1 className="mb-5 text-neutral-300">Welcome, 
+                        <span className="font-vt">{userData.personaname}!</span>
+                    </h1>
+                    <ProfileStatsCard userData={userData}/>
+                </div>
+                <div className="flex gap-5 justify-center">
+                    <MostPlayedDropdown/>
+                    <FriendsListDropdown/>
+                </div>
+            </Layout>
 
-            <div className="mb-5">
-                <h1 className="mb-5 text-neutral-300">Welcome, {userData.personaname}!</h1>
-                <ProfileStatsCard userData={userData}/>
-            </div>
-            <div className="flex gap-5 justify-center">
-                <MostPlayedDropdown/>
-                <FriendsListDropdown/>
-            </div>
-
-        </Layout>
+        </div>
     )
 }
 
