@@ -39,11 +39,11 @@ const FriendsListDropdown = () => {
 
 
     return (
-        <div className="w-full h-full bg-purple-800 rounded-md">
+        <div className="w-full h-full bg-neutral-800 rounded-md">
             <h1 className="text-center py-5 text-2xl">Your Friends</h1>
 
             {/* Returning list of friends */}
-            <div className="h-96 overflow-y-scroll no-scrollbar bg-neutral-800">
+            <div className="h-96 overflow-y-scroll no-scrollbar bg-neutral-900">
                 {
                     friendsList.map((friend) => {
                         return (

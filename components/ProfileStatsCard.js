@@ -6,6 +6,9 @@
 
 import { React, useState, useEffect } from "react";
 import './../app/globals.css';
+import GenrePieChart from "./GenrePieChart";
+import LibraryDetails from "./LibraryDetails";
+import RareAchievements from "./RareAchievements";
 
 
 const ProfileStatsCard = ({ userData }) => {
@@ -25,22 +28,36 @@ const ProfileStatsCard = ({ userData }) => {
         <div className="bg-neutral-800 rounded-md">
 
             {/* Top row */}
-            <div className="p-5 title-section flex gap-3 bg-purple-800">
+            <div className="p-5 title-section flex gap-3">
                 <div className="w-full flex items-center justify-between gap-3">
                     <div className="flex items-center">
                         <img src={userData.avatarmedium} className="h-12 mr-3"/>
                         <h1 className="text-2xl">{userData.personaname}</h1>
                     </div>
-                    <p className="text-neutral-500 text-sm">Account Created: {formattedDate}</p>
-                    <a href={userData.profileurl} className="text-sm text-purple-500">Steam Profile</a>
+
+                    <p className="text-neutral-300 text-sm font-semibold">Member Since: {formattedDate}</p>
+                    <a href={userData.profileurl} className=" flex gap-2 items-center bg-purple-700 p-2 rounded-xl text-sm text-neutral-300">
+                        <img src="/steam-logo.png" className="h-5"/>
+                        <p>Profile</p>
+                    </a>
+
                 </div>  
             </div>
 
             {/* Second row */}
-            <div className="title-section flex gap-3">
-                <div className="w-full flex items-center justify-between gap-3">
+            <div className="title-section flex justify-between gap-3 bg-neutral-900">
 
+                <div className="flex items-center p-2">
+                    <GenrePieChart/>
                 </div>  
+
+                <div>
+                    <LibraryDetails/>
+                </div>
+
+                <div>
+                    <RareAchievements/>
+                </div>
             </div>
 
 
