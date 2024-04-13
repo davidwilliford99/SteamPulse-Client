@@ -10,19 +10,19 @@ const SideNav = () => {
             <li className="mb-2 pl-3 flex items-center hover:bg-neutral-700 rounded-sm">
                     <img src='/global.svg' className="h-6"/>
                     <Link legacyBehavior href="/GlobalDashboard">
-                        <a className="block p-2 text-neutral-300 font-semibold">Store Dashboard</a>
+                        <a className="block p-2 text-neutral-300">Store Dashboard</a>
                     </Link>
                 </li>
                 <li className="mb-2 pl-3 flex items-center hover:bg-neutral-700 rounded-sm">
                     <img src='/profile.svg' className="h-6"/>
                     <Link legacyBehavior href="/YourDashboard">
-                        <a className="block p-2 text-neutral-300 font-semibold">Account Dashboard</a>
+                        <a className="block p-2 text-neutral-300">Account Dashboard</a>
                     </Link>
                 </li>
                 <li className="mb-2 pl-3 flex items-center hover:bg-neutral-700 rounded-sm">
                     <img src='/chart.svg' className="h-6"/>
                     <Link legacyBehavior href="/AboutUs">
-                        <a className="block p-2 text-neutral-300 font-semibold">About Us</a>
+                        <a className="block p-2 text-neutral-300">About Us</a>
                     </Link>
                 </li>
             </ul>

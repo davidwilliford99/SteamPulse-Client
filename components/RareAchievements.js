@@ -27,18 +27,18 @@ const RareAchievements = () => {
             <div className="h-48 overflow-y-scroll no-scrollbar flex flex-col gap-3">
                 {isLoading ? (
                     // Show loading animation or message here
-                    <div className="flex justify-center items-center h-full">
+                    <div className="flex justify-center items-center h-full font-thin">
                         <img src='/loading.gif' className='h-40'/> {/* Replace this with your actual loading animation */}
                     </div>
                 ) : (
                     achievements.map((achievement, index) => (
                         <div key={index} className="bg-black text-md p-3">
                             <p className='flex gap-3'>
-                                <span className='text-purple-500'>Game:</span> 
+                                <span className='text-purple-300'>Game:</span> 
                                 {achievement.game}
                             </p>
                             <p className='flex gap-3 text-yellow-500'>
-                                <span className='text-purple-500'>Achievement:</span> 
+                                <span className='text-purple-300'>Achievement:</span> 
                                 {
                                     achievement.achievement.length > 30 
                                         ? `${achievement.achievement.substring(0, 30)}...` 
@@ -46,7 +46,7 @@ const RareAchievements = () => {
                                 }
                             </p>
                             <p className='flex gap-3'>
-                                <span className='text-purple-500'>Rarity</span> 
+                                <span className='text-purple-300'>Rarity</span> 
                                 {achievement.rarity.toFixed(2)}%
                             </p>
                         </div>
