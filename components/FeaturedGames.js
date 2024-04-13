@@ -31,7 +31,7 @@ const FeaturedGames = () => {
                         featured.map((game) => {
                             const url = `/GlobalDashboard?appId=${game.id}`;
                             return (
-                                <a key={game.id} className='flex items-center gap-3 shrink-0 p-4' href={url}>
+                                <a key={game.id} className='flex flex-col justify-center gap-3 shrink-0 p-4' href={url}>
                                     <img src={game.header_image} alt={game.name} className="h-2/3"/>
                                     <div>
                                         <h1 className='text-xl font-bold'>{game.name}</h1>

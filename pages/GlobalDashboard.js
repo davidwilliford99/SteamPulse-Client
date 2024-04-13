@@ -7,14 +7,14 @@ import SimilarGames from "@/components/SimilarGames";
 
 const GlobalDashboard = () => {
     return (
-        <div className="font-source">
+        <div className="font-source w-full">
             <Layout>
 
                 <div className="mb-5">
                     <GameInfoCard/>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-3 w-full">
                     <div className="mb-5">
                         <FeaturedGames/>
                     </div>
