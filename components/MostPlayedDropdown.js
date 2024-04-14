@@ -42,7 +42,7 @@ const MostPlayedDropdown = () => {
                         let playtime = Math.floor(game.playtime_forever / 60);
                         return (
                             <div key={game.appid} className="px-3">
-                                <div className="flex justify-between">
+                                <div className="flex justify-between items-center">
                                     <div className="flex items-center p-2 my-2 gap-5">
                                         <img src={game.imageurl} className="h-6"/>
                                         <h1 className="text-md">{truncateTitle(game.title, 20)}</h1>
