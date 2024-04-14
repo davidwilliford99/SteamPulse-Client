@@ -55,7 +55,7 @@ const SimilarGames = () => {
     }, [genre]);
 
     return (
-        <div className='w-full rounded-md bg-neutral-800'>
+        <div className='rounded-md bg-neutral-800'>
             <h1 className='p-5 text-2xl'>Similar Titles</h1>
 
             {loading && <div>Loading...</div>}
@@ -63,20 +63,24 @@ const SimilarGames = () => {
             {error && <p>{error}</p>}
 
             {!loading && games.length > 0 && !error &&
-                <ul className='bg-neutral-900'>
+                <div className='bg-neutral-900 h-96 flex flex-col overflow-y-scroll no-scrollbar'>
+
                     {games.map((game) => {
                         const url = `/GlobalDashboard?appId=${game.steam_appid}`;
                         return (
-                            <a key={game.steam_appid} href={url}> 
-                                <li>
-                                    <img src={game.images.header_image} alt={`Screenshot of ${game.title}`} />
-                                    <div>{game.title}</div>
-                                </li>
+                            <a key={game.steam_appid} href={url} className='flex flex-col justify-center gap-3 shrink-0 p-4'> 
+                                <img src={game.images.header_image} alt={`Screenshot of ${game.title}`} className='h-2/3 w-auto'/>
+                                <div>
+                                    <h1 className='text-xl font-bold'>{game.title}</h1>
+                                    <div className='flex gap-3 items-center'>
+                                        <p className='text-lg text-green-500'>${game.base_price}</p>
+                                    </div>
+                                </div>
                             </a>
                         )
-
                     })}
-                </ul>
+
+                </div>
             }
 
 

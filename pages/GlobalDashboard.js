@@ -14,7 +14,7 @@ const GlobalDashboard = () => {
                     <GameInfoCard/>
                 </div>
 
-                <div className="flex gap-3 w-full">
+                <div className="flex justify-center gap-3 w-full">
                     <div className="mb-5">
                         <FeaturedGames/>
                     </div>

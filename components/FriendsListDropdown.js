@@ -40,7 +40,7 @@ const FriendsListDropdown = () => {
                     setIsLoading(false); // Handle loading state even on error
                 });
         }
-    }, []); // This effect runs only once on component mount
+    }, []); 
 
     return (
         <div className="w-full h-full bg-neutral-800 rounded-md">
