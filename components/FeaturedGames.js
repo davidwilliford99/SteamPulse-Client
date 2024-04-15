@@ -37,10 +37,9 @@ const FeaturedGames = () => {
                                         <h1 className='text-xl font-bold'>{game.name}</h1>
                                         <div className='flex gap-3 items-center'>
                                             <p className='text-lg text-green-500'>${game.final_price / 100}</p>
-                                            {game.discount_percent && <p className='text-red-500'>-{game.discount_percent}%</p>}
+                                            {game.discount_percent > 0 && <p className='text-red-500'>-{game.discount_percent}%</p>}
                                         </div>
                                     </div>
-
                                 </a>
                             );
                         })

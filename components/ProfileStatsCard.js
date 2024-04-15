@@ -22,6 +22,11 @@ const ProfileStatsCard = ({ userData }) => {
 
     // Concatenate to get a YYYY-MM-DD format
     var formattedDate = month + '/' + day + '/' + year;
+
+    const handleDisconnect = () => {
+        localStorage.removeItem("steamId");
+        window.location.href = '/GlobalDashboard';
+    };
      
 
     return (
@@ -36,10 +41,17 @@ const ProfileStatsCard = ({ userData }) => {
                     </div>
 
                     <p className="text-neutral-300 text-lg font-semibold">Member Since: {formattedDate}</p>
-                    <a href={userData.profileurl} className=" flex gap-2 items-center bg-purple-700 p-2 rounded-xl text-sm text-neutral-300">
-                        <img src="/steam-logo.png" className="h-5"/>
-                        <p>Profile</p>
-                    </a>
+
+                    <div className="flex gap-3">
+                        <a href={userData.profileurl} className="flex gap-2 items-center bg-purple-700 p-2 rounded-xl text-sm text-neutral-300">
+                            <img src="/steam-logo.png" className="h-5"/>
+                            <p>Profile</p>
+                        </a>
+                        <a onClick={handleDisconnect} className="flex gap-2 items-center bg-neutral-700 p-2 rounded-xl text-sm text-neutral-300 cursor-pointer">
+                            <p>Disconnect Account</p>
+                        </a>
+                    </div>
+
 
                 </div>  
             </div>

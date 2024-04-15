@@ -6,6 +6,8 @@ const GameInfoCard = () => {
     const router = useRouter(); // Using the useRouter hook to get access to the router object
     const [gameData, setGameData] = useState();
     const [bgImg, setBgImg] = useState('');
+    const [steamUrl, setSteamUrl] = useState('');
+    const [youtubeUrl, setYoutubeUrl] = useState('');
 
     useEffect(() => {
         const appId = router.query.appId || '1938090'; // Accessing the appId from URL parameters or using a default
@@ -14,6 +16,8 @@ const GameInfoCard = () => {
             axios.get(`http://localhost:5000/steam/api/game-details?appid=${appId}`)
                 .then(response => {
                     setGameData(response.data);
+                    setSteamUrl(`https://store.steampowered.com/app/${appId}/`);
+                    setYoutubeUrl(`https://www.youtube.com/results?search_query=${response.data.title}`);
                     setBgImg(response.data.images.background);
                     console.log(response.data);
                 })
@@ -32,6 +36,8 @@ const GameInfoCard = () => {
         backgroundImage: `url(${bgImg})`
     };
 
+   
+
     return (
         <div className="bg-neutral-800 rounded-md">
             {/* Top row */}
@@ -42,12 +48,12 @@ const GameInfoCard = () => {
                     </div>
 
                     <div className='flex gap-3'>
-                        <a href='/' className="flex gap-2 items-center bg-green-700 p-2 rounded-xl text-sm text-neutral-300">
+                        <a href={steamUrl} target='_blank' className="flex gap-2 items-center bg-green-700 p-2 rounded-xl text-sm text-neutral-300">
                             <img src="/steam-logo.png" className="h-5"/>
                             <p>Purchase</p>
                         </a>
 
-                        <a href='/' className="flex gap-2 items-center bg-red-800 p-2 rounded-xl text-sm text-neutral-300">
+                        <a href={youtubeUrl} target='_blank' className="flex gap-2 items-center bg-red-800 p-2 rounded-xl text-sm text-neutral-300">
                             <img src="/youtube-logo.png" className="h-5"/>
                             <p>Videos</p>
                         </a>
