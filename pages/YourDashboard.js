@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import './../app/globals.css';
 import ProfileStatsCard from "@/components/ProfileStatsCard";
 import MostPlayedDropdown from "@/components/MostPlayedDropdown";
@@ -11,7 +11,6 @@ const YourDashboard = () => {
     const [userData, setUserData] = useState(null);
     const [steamId, setSteamId] = useState(null);
 
-    // Check if steamId is available in local storage and fetch user data
     useEffect(() => {
         const localSteamId = localStorage.getItem("steamId");
         if (localSteamId) {
@@ -30,12 +29,23 @@ const YourDashboard = () => {
             });
     };
 
+    const addUserToDatabase = (steamId) => {
+        axios.post(`http://localhost:5000/add_user/${steamId}`)
+            .then(response => {
+                console.log('User added:', response.data.message);
+            })
+            .catch(error => {
+                console.error('Error adding user:', error.response.data.error);
+            });
+    };
+
     const handleSteamIdSubmit = (event) => {
         event.preventDefault();
         const newSteamId = event.target.elements.steamIdInput.value;
         localStorage.setItem("steamId", newSteamId);
         setSteamId(newSteamId);
         fetchUserData(newSteamId);
+        addUserToDatabase(newSteamId);
     };
 
     return (
