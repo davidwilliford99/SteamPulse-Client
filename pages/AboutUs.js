@@ -71,7 +71,6 @@ const AboutUs = () => {
                                     <img src={user.avatarmedium} alt={`${user.personaname}'s avatar`} className="w-10 h-10 rounded-full mr-4"/>
                                     <div>
                                         <p className="text-lg">{user.personaname}</p>
-                                        <p className="text-sm text-neutral-500">{user.steam_id}</p>
                                     </div>
                                 </div>
                             ))}
