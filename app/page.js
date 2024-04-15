@@ -1,8 +1,14 @@
-import Image from "next/image";
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
-  window.location.href = "/GlobalDashboard";
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/GlobalDashboard');
+  }, [router]); // Depend on 'router' to ensure it's available
+
   return (
-    <h1>Hello World</h1>
+    <h1>Redirecting...</h1>
   );
 }
